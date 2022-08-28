@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score
 """
 Install panads for Data Frames. This model uses Decision Tree Classifiers.
 Use Train_test_split for splitting data for training and splitting purposes
-Accuracy Score is used to compare the testing and predictions and provide accuracy reading 
+Accuracy Score is used to compare the testing and predictions and provide accupip uninstallracy reading 
 """
 
 #Import the data file
