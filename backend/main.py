@@ -1,6 +1,5 @@
 import json 
 from posixpath import split
-import re
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
@@ -33,6 +32,27 @@ model = DecisionTreeClassifier()
 #fit the model
 model.fit(X_train.values, Y_train)
 
+
+def returnJson(gender,age,urea,cr,hba1c,chol,tg,hdl,ldl,vldl,bmi):
+    value = {
+        "Gender": str(gender),
+        "Age": str(age),
+        "Urea": str(urea),
+        "CR": str(cr),
+        "Hba1C": str(hba1c),
+        "Chol": str(chol),
+        "Tg": str(tg),
+        "HDL": str(hdl),
+        "LDL": str(ldl),
+        "VLDL": str(vldl),
+        "BMI": str(bmi)
+    }
+    print(value)
+    return json.dumps(value)
+
+
+
+
 if (mode == 0):
     user_mode = input("Would you like to test using dummy values? Enter Y for yes, N for no: ")
     if (user_mode == "Y" or user_mode == "y"):
@@ -55,7 +75,9 @@ if (mode == 0):
             ldl = json_object['ldl']
             vldl = json_object['vldl']
             bmi = json_object['bmi']
-            print("Gender: "+ str(gender) + "\tAge: " + str(age) + "\tUrea: " + str(urea) + "\tCR: " + str(cr) + "\tHba1C: " + str(hba1c) + "\tChol: " + str(chol) + "\tTg: " + str(tg) + "\tHDL: " + str(hdl) + "\tLDL: " + str(ldl) + "\tVldl: " + str(vldl) + "\tBmi: " + str(bmi))
+            #print("Gender: "+ str(gender) + "\tAge: " + str(age) + "\tUrea: " + str(urea) + "\tCR: " + str(cr) + "\tHba1C: " + str(hba1c) + "\tChol: " + str(chol) + "\tTg: " + str(tg) + "\tHDL: " + str(hdl) + "\tLDL: " + str(ldl) + "\tVldl: " + str(vldl) + "\tBmi: " + str(bmi))
+            #returnJson(gender,age,urea,cr,hba1c,chol,tg,hdl,ldl,vldl,bmi)
+
 
         elif(diabetic_choice == "2"):
             #predictions = model.predict([[0,49,4.7,36,2.6,4.2,0.9,2.4,4,0.5,23.0]]) #Dummy non-diabetic value
@@ -73,7 +95,8 @@ if (mode == 0):
             ldl = json_object['ldl']
             vldl = json_object['vldl']
             bmi = json_object['bmi']
-            print("Gender: "+ str(gender) + "\tAge: " + str(age) + "\tUrea: " + str(urea) + "\tCR: " + str(cr) + "\tHba1C: " + str(hba1c) + "\tChol: " + str(chol) + "\tTg: " + str(tg) + "\tHDL: " + str(hdl) + "\tLDL: " + str(ldl) + "\tVldl: " + str(vldl) + "\tBmi: " + str(bmi))
+            #print("Gender: "+ str(gender) + "\tAge: " + str(age) + "\tUrea: " + str(urea) + "\tCR: " + str(cr) + "\tHba1C: " + str(hba1c) + "\tChol: " + str(chol) + "\tTg: " + str(tg) + "\tHDL: " + str(hdl) + "\tLDL: " + str(ldl) + "\tVldl: " + str(vldl) + "\tBmi: " + str(bmi))
+            #returnJson(gender,age,urea,cr,hba1c,chol,tg,hdl,ldl,vldl,bmi)
 
     elif (user_mode == "N" or user_mode == "n"):
         gender, age, urea, cr, hba1c, chol, tg, hdl, ldl, vldl, bmi= input("Enter the gender, age, blood urea nitrogen, creatinine, hemoglobin, cholesterol, triglycerides, high-density liprotein, low-density liporotein, very-low-desnity liprotien & BMI:").split(' ')
@@ -82,8 +105,11 @@ if (mode == 0):
 
     if (predictions == 1):
         print("Patient is diabetic")
+        returnJson(gender,age,urea,cr,hba1c,chol,tg,hdl,ldl,vldl,bmi)
     else:
         print("Patient is non diabetic")
+        returnJson(gender,age,urea,cr,hba1c,chol,tg,hdl,ldl,vldl,bmi)
+
 elif (mode == 1 ):
     print("Determining accuracy of model - taking dataset from: " + dataset )
     #make predctions based on the test values
