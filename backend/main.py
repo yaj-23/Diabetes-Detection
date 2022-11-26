@@ -76,7 +76,7 @@ if (mode == 0):
             vldl = json_object['vldl']
             bmi = json_object['bmi']
             #print("Gender: "+ str(gender) + "\tAge: " + str(age) + "\tUrea: " + str(urea) + "\tCR: " + str(cr) + "\tHba1C: " + str(hba1c) + "\tChol: " + str(chol) + "\tTg: " + str(tg) + "\tHDL: " + str(hdl) + "\tLDL: " + str(ldl) + "\tVldl: " + str(vldl) + "\tBmi: " + str(bmi))
-            #returnJson(gender,age,urea,cr,hba1c,chol,tg,hdl,ldl,vldl,bmi)
+            returnJson(gender,age,urea,cr,hba1c,chol,tg,hdl,ldl,vldl,bmi)
 
 
         elif(diabetic_choice == "2"):
@@ -96,7 +96,7 @@ if (mode == 0):
             vldl = json_object['vldl']
             bmi = json_object['bmi']
             #print("Gender: "+ str(gender) + "\tAge: " + str(age) + "\tUrea: " + str(urea) + "\tCR: " + str(cr) + "\tHba1C: " + str(hba1c) + "\tChol: " + str(chol) + "\tTg: " + str(tg) + "\tHDL: " + str(hdl) + "\tLDL: " + str(ldl) + "\tVldl: " + str(vldl) + "\tBmi: " + str(bmi))
-            #returnJson(gender,age,urea,cr,hba1c,chol,tg,hdl,ldl,vldl,bmi)
+            returnJson(gender,age,urea,cr,hba1c,chol,tg,hdl,ldl,vldl,bmi)
 
     elif (user_mode == "N" or user_mode == "n"):
         gender, age, urea, cr, hba1c, chol, tg, hdl, ldl, vldl, bmi= input("Enter the gender, age, blood urea nitrogen, creatinine, hemoglobin, cholesterol, triglycerides, high-density liprotein, low-density liporotein, very-low-desnity liprotien & BMI:").split(' ')

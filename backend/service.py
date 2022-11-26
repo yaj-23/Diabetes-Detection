@@ -6,7 +6,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
 
-
 def getUserData(model):
     user_mode = input("Would you like to test using dummy values? Enter Y for yes, N for no: ")
     if (user_mode == "Y" or user_mode == "y"):
@@ -122,8 +121,9 @@ def main():
     model.fit(X_train.values, Y_train)
     if (mode == 0):
         userData = getUserData(model)
-        print (userData)
-        return userData
+        # print (userData)
+        # return userData
+        #metrics(userData)
     elif (mode == 1):
         accuracy = getAccuracy(X_test, Y_test, model, dataset)
         print(accuracy)
