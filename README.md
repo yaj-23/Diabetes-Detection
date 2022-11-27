@@ -21,10 +21,15 @@ Next, run the python file. This is the current testing method - check backlog fo
 
 
 ## Back Log:
-- Implement an efficient way of testing data with predictions
-- Get more data - the current data set is small, resulting in higher accuracy results. 
-- Create UI to offer a better way to test individual data
-- Run evaluations and try out different models for better accuracy
+- Get Python connected to Mongo DB. 
+- Take data from the Database store it.  
+- Run the python script using those values and store the values in json. 
+- Send that data back to database. 
+- Get request to database and display to front-end. 
 
 ## Remarks:
 Note this project is purely for learning purposes and not for profit. If there are certain parts you wish to be removed from this project, don't hesitate to get in touch with me without any hesitation 😊
+
+## Personal Remarks:
+To start service, cd diabetesdetection\proj-backend then run npm run start
+In another terminal window. cd diabetesdetection then run npm start
