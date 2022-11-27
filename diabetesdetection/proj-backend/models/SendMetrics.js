@@ -6,31 +6,40 @@ const sendMetricsTemplate = new mongoose.Schema({
         required: true
     },
     age:{
-        type:String, 
+        type:String,
+        required: true 
     },
     urea:{
         type:String, 
+        required: true
     },
     crea:{
         type:String, 
+        required: true
     },
     hba1c:{
         type:String, 
+        required: true
     },
     chol:{
         type:String, 
+        required: true
     },
     hdl:{
         type:String, 
+        required: true
     },
     ldl:{
         type:String, 
+        required: true
     },
     vldl:{
         type:String, 
+        required: true
     },
     bmi:{
         type:String, 
+        required: true
     }
 });
 

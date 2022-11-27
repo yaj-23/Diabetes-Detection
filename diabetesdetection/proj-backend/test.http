@@ -2,7 +2,7 @@ POST http://localhost:4000/app/sendMetrics
 Content-Type: application/json
 
 {
-    "gender": "Joey",
+    "gender": "0",
     "age":"50",
     "urea":"4.7",
     "crea":"46",
