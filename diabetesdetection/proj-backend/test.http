@@ -1,0 +1,16 @@
+POST http://localhost:4000/app/sendMetrics
+Content-Type: application/json
+
+{
+    "gender": "Joey",
+    "age":"50",
+    "urea":"4.7",
+    "crea":"46",
+    "hba1c":"4.9",
+    "chol":"4.2",
+    "tg":"0.9",
+    "hdl":"2.4",
+    "ldl":"1.4",
+    "vldl":"0.5",
+    "bmi":"24"
+}
