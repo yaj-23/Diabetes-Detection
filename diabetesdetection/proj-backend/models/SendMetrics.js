@@ -25,6 +25,10 @@ const sendMetricsTemplate = new mongoose.Schema({
         type:String, 
         required: true
     },
+    tg:{
+        type:String,
+        required: true
+    },
     hdl:{
         type:String, 
         required: true
