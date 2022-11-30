@@ -52,7 +52,13 @@ model.fit(X_train.values, Y_train)
 
 predictions = model.predict([[(gender), (age), (urea), (cr), (hba1c), (chol), (tg), (hdl), (ldl), (vldl), (bmi)]])
 
+newCollection = db["patientResult"]
+
 if (predictions == 1):
     print("Patient is diabetic")
+    newCollection.insert_one({"Patient":"1"})
 else:
     print("Patient is non diabetic")
+    newCollection.insert_one({"Patient":"0"})
+
+
