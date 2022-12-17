@@ -1,0 +1,7 @@
+GET  http://localhost:4000/app/patientResult
+Content-Type: application/json
+
+{
+    
+     
+}

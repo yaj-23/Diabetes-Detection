@@ -52,7 +52,7 @@ model.fit(X_train.values, Y_train)
 
 predictions = model.predict([[(gender), (age), (urea), (cr), (hba1c), (chol), (tg), (hdl), (ldl), (vldl), (bmi)]])
 
-newCollection = db["patientResult"]
+newCollection = db["tests"]
 
 if (predictions == 1):
     print("Patient is diabetic")
