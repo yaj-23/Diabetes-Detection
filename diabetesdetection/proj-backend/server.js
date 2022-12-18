@@ -21,20 +21,7 @@ app.use(cors());
 
 app.use('/app', routesUrl)
 
-// const patientResultsTemplate = new mongoose.Schema({
-//     Patient:{
-//         type:String,
-//         required: true
-//     }
-// });
-  
-// const Product = mongoose.model('metrics', patientResultsTemplate);
-// app.get('/products', function(req, res) {
-//     Product.find({}, function(err, products) {
-//       if (err) return console.error(err);
-//       res.send(products);
-//     });
-//   });
+
 
 app.listen(4000, ()=> console.log("Server Is Up & Running"));
 

@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import  Axios from 'axios';
 
 
 function App() {
-  const url="http://localhost:4000/app/sendMetrics"
+  const url="http://localhost:4000/app/sendMetrics";
+  const resultsUrl = "http:localhost:4000/app/patientResults";
+
   const [data, setData] = useState({
     gender:"",
     age:"",
@@ -18,6 +20,8 @@ function App() {
     vldl:"",
     bmi:"",
   })
+  const [patientResults, setPatientResults] = useState([]);
+
   function handle(e){
     const newdata={...data}
     newdata[e.target.id] = e.target.value
@@ -43,6 +47,16 @@ function App() {
       console.log(res.data)
     });
   }
+  useEffect(() => {
+    Axios.get("http://localhost:4000/app/patientResult")
+      .then(res => setPatientResults(res.data))
+      .catch(err => console.log(err));
+  
+    return () => {
+      // Clean up function goes here
+    };
+  }, []);
+  
   return (
     <>
     <h1>Values for Diabetes Detection</h1>
@@ -62,6 +76,13 @@ function App() {
         <button>Submit</button>
       </form>
       
+    </div>
+    <div>
+      {patientResults.map(result => (
+        <div key={result.id}>
+          <p>Patient is: {result.Patient}</p>
+        </div>
+      ))}
     </div>
 
 

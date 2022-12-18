@@ -1,5 +1,3 @@
-import pymongo
-import json 
 from posixpath import split
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
@@ -53,12 +51,14 @@ model.fit(X_train.values, Y_train)
 predictions = model.predict([[(gender), (age), (urea), (cr), (hba1c), (chol), (tg), (hdl), (ldl), (vldl), (bmi)]])
 
 newCollection = db["tests"]
-
+records.delete_many({})
 if (predictions == 1):
     print("Patient is diabetic")
-    newCollection.insert_one({"Patient":"1"})
+    newCollection.delete_many({})
+    newCollection.insert_one({"Patient":"Diabetic"})
 else:
-    print("Patient is non diabetic")
-    newCollection.insert_one({"Patient":"0"})
+    print("Patient is non diabetic")        
+    newCollection.delete_many({})
+    newCollection.insert_one({"Patient":"Non-Diabetic"})
 
 

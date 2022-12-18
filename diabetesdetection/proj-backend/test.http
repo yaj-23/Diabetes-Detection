@@ -2,15 +2,15 @@ POST http://localhost:4000/app/sendMetrics
 Content-Type: application/json
 
 {
-    "gender": "1",
-    "age": "45",
-    "urea": "4.8",
-    "crea": "82",
-    "hba1c": "7.2", 
-    "chol": "4.7",
-    "tg": "1.8", 
-    "hdl": "0.8",
-    "ldl": "3.1",
-    "vldl": "12.7",
-    "bmi": "31.2"
+    "gender": 0,
+    "age": 49,
+    "urea": 4.7,
+    "crea": 36,
+    "hba1c": 2.6, 
+    "chol": 4.2,
+    "tg": 0.9, 
+    "hdl": 2.4,
+    "ldl": 4,
+    "vldl": 0.5,
+    "bmi": 23.0
 }
